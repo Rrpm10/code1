@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main(){
+
+struct Employee {
+//int empid;
+char name[20];
+double score[3];
+};
+
+
+struct Employee E1[2];
+struct Employee *ptr=E1;
+
+
+for(int i=0;i<2;i++)
+{
+   // printf("employee %d id :",i+1);
+  //  scanf("%d",&E1[i].empid);
+    printf("employee %d name :",i+1);
+    scanf("%s",&E1[i].name);
+
+    printf("employee %d scores :\n",i+1);
+
+    for(int j=0;j<3;j++){
+        printf("Score %d :",j+1);
+        scanf("%lf",&E1[i].score[j]);
+    }
+}
+
+double total[2];
+
+for(int i=0;i<2;i++)
+{for(int j=0;j<3;j++){
+  total[i]+=ptr->score[j];}
+  ptr++;
+  printf("%d employee total score: %lf \n",i+1,total[i]);
+  printf("%d employee avg total score: %lf \n",i+1,total[i]/3);
+}
+
+
+
+/*for(int i=0;i<2;i++)
+{
+   printf("%d employee scores: %lf %lf %lf \n",i+1,ptr->score[0], ptr->score[1], ptr->score[2]);
+   ptr++;
+}
+*/
+
+
+}
